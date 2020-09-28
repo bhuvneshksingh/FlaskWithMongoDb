@@ -13,30 +13,30 @@
 <body>
 	<h1>{{h}}</h1>
 	<hr>
-	<h3>Update tasks with a reference</h3>
-	<form action="/action3" method="POST">
-	{% for task in tasks %}
-		Unique Object ID : {{ task['_id'] }}<br/>
-	<input type="text" name="_id" value="{{ task['_id'] }}" hidden>
+	<h3>Update employee infomation with a reference</h3>
+	<form action="/update_task" method="POST">
+	{% for info in infos %}
+		Unique Object ID : {{ info['_id'] }}<br/>
+	<input type="text" name="_id" value="{{ info['_id'] }}" hidden>
 
 	<table>
 	<tr>
-	<td>Task Name</td><td> : </td><td><input type="text" name="name" value="{{ task['name'] }}" placeholder="{{ task['name'] }}"></td>
+	<td>Employee Name</td><td> : </td><td><input type="text" name="name" value="{{ info['name'] }}" placeholder="{{ info['name'] }}"></td>
 	</tr>
 	<tr>
-	<td>Description</td><td> : </td><td><textarea type="text" name="desc" rows=3 cols=30 placeholder="{{ task['desc'] }}"> {{ task['desc'] }} </textarea></td>
+	<td>Email</td><td> : </td><td><textarea type="text" name="email" rows=3 cols=30 placeholder="{{ info['email'] }}"> {{ info['email'] }} </textarea></td>
 	</tr>
 	<tr>
-	<td>Date</td><td> : </td><td><input type="text" name="date" value="{{ task['date'] }}" placeholder="{{ task['date'] }}"></td>
+	<td>Gender</td><td> : </td><td><input type="text" name="gender" value="{{ info['gender'] }}" placeholder="{{ info['gender'] }}"></td>
 	</tr>
 	<tr>
-	<td>Priority</td><td> : </td><td><input type="text" name="pr" value="{{ task['pr'] }}" placeholder="{{ task['pr'] }}"></td>
+	<td>Joining Date</td><td> : </td><td><input type="text" name="joining_date" value="{{ info['joining_date'] }}" placeholder="{{ info['joining_date'] }}"></td>
 	</tr>
 	</table>
 	{% endfor %}
-		<button type="submit"> Update Task </button>
+		<button type="submit"> Update information </button>
 		<br/>
 	</form>
-	<a href="/">Return to TaskList</a>
+	<a href="/">Return to employeeList</a>
 </body>
 </html>
